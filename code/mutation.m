@@ -1,3 +1,11 @@
+%{
+Authors:
+Jonatas Lopes de Paiva
+Claudio Fabiano Motta Toledo
+Helio Pedrini
+
+%}
+
 function g = mutation(img)
 
 r = randi(3);

@@ -1,3 +1,11 @@
+%{
+Authors:
+Jonatas Lopes de Paiva
+Claudio Fabiano Motta Toledo
+Helio Pedrini
+
+%}
+
 function pop = restartPop(pop, sizePop, denoisedImages, img, beta, lambda)
 
 popTemp(sizePop).fitness = 0;

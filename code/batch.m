@@ -1,3 +1,31 @@
+%{
+Authors:
+Jonatas Lopes de Paiva
+Claudio Fabiano Motta Toledo
+Helio Pedrini
+
+Executes a batch of runs of the HGA. The metrics PSNR, SSIM and FOM are
+calculated in all the cases and an output log file is produced.
+
+Parameters:
+
+- originalFile: Path to the image without noise
+- noisyFile: Path to the noisy image
+- outputName: Path to the output file. The output images are saved on
+specified locations with an ending with the specified name in the png
+format.
+- sizePop: Size of the Population
+- localSearchRate: Local search rate
+- numRuns: Number of runs of the algorithm
+- maxTime: Time spent on the execution
+- numIter: Max number of iterations without improving the best individual
+without before restarting the population
+- beta: Beta value
+- tournSize: Tournament size
+
+
+%}
+
 function batch(originalFile, noisyFile, outputName, sizePop, localSearchRate, numRuns, maxTime, numIter, beta, tournSize)
   
     file = fopen('output_log.data','a');
@@ -22,7 +50,7 @@ function batch(originalFile, noisyFile, outputName, sizePop, localSearchRate, nu
         f = execHGA(sizePop, noisyImage, localSearchRate, maxTime, numIter, beta, tournSize);
         [psnr, ssim, fom] = metrics(f, imgOriginal, fedge);
         
-        outFile = strcat(outputName);
+        outFile = sprintf('%s_%d.png',outputName, k);
         
         imwrite(uint8(f), outFile);
         
@@ -56,6 +84,8 @@ function batch(originalFile, noisyFile, outputName, sizePop, localSearchRate, nu
     
 end
 
+
+%% Helping functions section
 function printFileStdOut(file, str)
 
 fprintf(str);

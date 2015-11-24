@@ -1,3 +1,25 @@
+%{
+Authors:
+Jonatas Lopes de Paiva
+Claudio Fabiano Motta Toledo
+Helio Pedrini
+
+Executes the HGA and returns the best image found.
+
+Parameters:
+
+- sizePop: Size of the Population
+- noisyImage: The noisy image (matrix of uint8)
+- localSearchRate: Local search rate
+- maxTime: Time spent on the execution
+- numIter: Max number of iterations without improving the best individual
+without before restarting the population
+- beta: Beta value
+- tournSize: Tournament size
+
+
+%}
+
 function [f, bestAG] = execHGA(sizePop, noisyImage, localSearchRate, maxTime, numIter, beta, tournSize)
 
 lambda = 1/sqrt(estimateVariance(noisyImage));

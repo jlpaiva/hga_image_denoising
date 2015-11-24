@@ -1,9 +1,17 @@
+%{
+Authors:
+Jonatas Lopes de Paiva
+Claudio Fabiano Motta Toledo
+Helio Pedrini
+
+%}
+
 function f = crossover(p1, p2)
 
 r = randi(3);
 [linhas, colunas] = size(p1);
 if (linhas == 0 || colunas == 0)
-    fprinf('Ferrou\n');
+    fprinf('Error\n');
 end
 
 switch r
@@ -26,11 +34,6 @@ switch r
             end
         end
         
-end
-
-[linhas, colunas] = size(tmp);
-if (linhas == 0 || colunas == 0)
-    fprinf('Ferrou\n');
 end
 
 f = tmp;

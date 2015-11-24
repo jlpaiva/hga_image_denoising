@@ -1,3 +1,11 @@
+%{
+Authors:
+Jonatas Lopes de Paiva
+Claudio Fabiano Motta Toledo
+Helio Pedrini
+
+%}
+
 function pop = createPop(sizePop, img, denoisedImages, beta, lambda  )
 
 population(sizePop).fitness = 0;

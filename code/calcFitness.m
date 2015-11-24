@@ -1,3 +1,11 @@
+%{
+Authors:
+Jonatas Lopes de Paiva
+Claudio Fabiano Motta Toledo
+Helio Pedrini
+
+%}
+
 function f = calcFitness(img, noisyImg, beta, lambda)
 beta2 = beta.^2;
 I_x = gradHorz( img );

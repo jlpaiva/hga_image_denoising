@@ -1,3 +1,11 @@
+%{
+Authors:
+Jonatas Lopes de Paiva
+Claudio Fabiano Motta Toledo
+Helio Pedrini
+
+%}
+
 function pop = evolveHGA(population, sizePop, localSearchRate, beta, lambda, noisyImage, maxTime, numIter, tournSize)
 
 bestID = population(1).id;
